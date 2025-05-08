@@ -27,6 +27,6 @@ app.use("/api/movies", movieRoutes);
 // Error handling
 app.use(notFound);
 app.use(errorHandler);
-app.get("/" , (req, res) => res.send("Welcome to MERN Auth Application"))
+app.get("/" , (req, res) => res.send("Welcome"))
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
