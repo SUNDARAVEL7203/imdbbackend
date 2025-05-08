@@ -12,6 +12,13 @@ dotenv.config();
 connectDB();
 
 const app = express();
+
+app.get("/", (req, res) => {
+    return res.status(200).json({
+        message: "I am from backend server",
+        success: true
+    });
+});
 app.use(cors());
 
 // ✅ Middleware that must come BEFORE routes
@@ -27,6 +34,6 @@ app.use("/api/movies", movieRoutes);
 // Error handling
 app.use(notFound);
 app.use(errorHandler);
-app.get("/" , (req, res) => res.send("Welcome"))
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
